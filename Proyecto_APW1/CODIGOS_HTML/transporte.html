@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activos Fijos de Transporte</title>
+    <link rel="stylesheet" href="../CODIGOS_CSS/ESTILOS.css">
+    <link rel="stylesheet" href="../CODIGOS_CSS/BARRA-MENU.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-list">
+
+        <li class="right"><a href="main.html">Inicio</a></li>
+        <li class="right"><a href="profile.html">Mi perfil</a></li> 
+        <li class="right"><a href="mantenimientos.html">Gestión</a></li>
+        <li class="right"><a href="inventory.html">Inventario</a></li>
+
+        <li class="right dropdown">
+          <a href="#">Activos Fijos</a>
+          <div class="dropdown-content">
+              <a href="tecnología.html">Tecnológicos</a>
+              <a href="mobiliario.html">Mobiliario</a>
+              <a href="transporte.html">Transporte</a>
+          </div>
+        </li>
+
+        <li class="search-box">
+            <input type="text" placeholder="Buscar facultades...">
+            <li> <button class="search-btn">Buscar</button> </li> 
+        </li>
+
+     </ul>
+  </nav>
+
+<section>
+  <div class="container">
+
+    <h1>ACTIVOS FIJOS DE TRANSPORTE</h1>
+
+      <!-- Filtros -->
+      <label for="facultad">Facultad:</label>
+      <select id="facultad">
+          <option value="Facultad de Ciencias de la Vida y Tecnología">Facultad de Ciencias de la Vida y Tecnología</option>
+          <option value="Facultad de Ciencias Sociales, Derecho y Bienestar">Facultad de Ciencias Sociales, Derecho y Bienestar</option>
+          <option value="Facultad de Ciencias Médicas">Facultad de Ciencias Médicas</option>
+          <option value="Facultad de Ingeniería, Industria y Construcción">Facultad de Ingeniería, Industria y Construcción</option>
+          <option value="Facultad de Educación, Turismo, Arte y Humanidades">Facultad de Educación, Turismo, Arte y Humanidades</option>
+          <option value="Facultad de Ciencias Administrativas, Contables y Comercio">Facultad de Ciencias Administrativas, Contables y Comercio</option>
+      </select><br>
+
+      <label for="tipoActivo">Tipo de Activo:</label>
+      <select id="tipoActivo">
+          <option value="Bus Escolar">Bus Escolar</option>
+          <option value="Motocicleta">Motocicleta</option>
+          <option value="Vehículo de Instrucción">Vehículo de Instrucción</option>
+          <!-- Agrega más opciones según sea necesario -->
+      </select>
+
+      <!-- Detalles del Activo de Transporte -->
+      <label for="marcaTransporte">Marca:</label>
+      <input type="text" id="marcaTransporte">
+
+      <label for="modeloTransporte">Modelo:</label>
+      <input type="text" id="modeloTransporte">
+
+      <label for="placaTransporte">Placa:</label>
+      <input type="text" id="placaTransporte">
+
+      <label for="valorAproximado">Valor Aproximado:</label>
+      <input type="text" id="valorAproximado">
+
+      <label for="valoracion">Valoración (1 al 10):</label>
+      <input type="number" id="valoracion" min="1" max="10">
+
+      <button class="boton" onclick="guardarActivo('transporte')">Guardar/Enviar</button>
+
+      <!-- Listado de Activos de Transporte -->
+      <ul id="listadoTransporte"></ul>
+  </div>
+</section>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<script>
+  function guardarActivo(tipo) {
+    var facultad = document.getElementById('facultad').value;
+    var tipoActivo = document.getElementById('tipoActivo').value;
+    var marcaTransporte = document.getElementById('marcaTransporte').value;
+    var modeloTransporte = document.getElementById('modeloTransporte').value;
+    var placaTransporte = document.getElementById('placaTransporte').value;
+    var valoracion = document.getElementById('valoracion').value;
+
+    if (facultad && tipoActivo && marcaTransporte && modeloTransporte && placaTransporte && valoracion) {
+      var listado = document.getElementById('listadoTransporte');
+      var nuevoItem = document.createElement('li');
+      nuevoItem.textContent =  facultad + " - " + tipoActivo + " - " + marcaTransporte+ " - " + modeloTransporte + " - " + placaTransporte + " - " + valoracion;
+      listado.appendChild(nuevoItem);
+
+      // Limpiar los campos después de enviar
+      document.getElementById('facultad').value = '';
+      document.getElementById('tipoActivo').value = '';
+      document.getElementById('marcaTransporte').value = '';
+      document.getElementById('modeloTransporte').value = '';
+      document.getElementById('placaTransporte').value = '';
+      document.getElementById('valoracion').value = '';
+    } else {
+      alert("Por favor, completa todos los campos.");
+    }
+  }
+</script>
+
+
+
+</body>
+</html>

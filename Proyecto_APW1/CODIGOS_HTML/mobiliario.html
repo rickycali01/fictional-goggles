@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activos Fijos Mobiliarios</title>
+    <link rel="stylesheet" href="../CODIGOS_CSS/ESTILOS.css">
+    <link rel="stylesheet" href="../CODIGOS_CSS/BARRA-MENU.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-list">
+
+        <li class="right"><a href="main.html">Inicio</a></li>
+        <li class="right"><a href="profile.html">Mi perfil</a></li> 
+        <li class="right"><a href="mantenimientos.html">Gestión</a></li>
+        <li class="right"><a href="inventory.html">Inventario</a></li>
+
+        <li class="right dropdown">
+          <a href="#">Activos Fijos</a>
+          <div class="dropdown-content">
+              <a href="tecnología.html">Tecnológicos</a>
+              <a href="mobiliario.html">Mobiliario</a>
+              <a href="transporte.html">Transporte</a>
+          </div>
+        </li>
+
+        <li class="search-box">
+            <input type="text" placeholder="Buscar facultades...">
+            <li> <button class="search-btn">Buscar</button> </li> 
+        </li>
+
+     </ul>
+  </nav>
+
+<section>
+  <div class="container">
+
+    <h1>ACTIVOS FIJOS MOBILIARIOS</h1>
+
+      <!-- Filtros -->
+      <label for="facultad">Facultad:</label>
+      <select id="facultad">
+          <option value="Facultad de Ciencias de la Vida y Tecnología">Facultad de Ciencias de la Vida y Tecnología</option>
+          <option value="Facultad de Ciencias Sociales, Derecho y Bienestar">Facultad de Ciencias Sociales, Derecho y Bienestar</option>
+          <option value="Facultad de Ciencias Médicas">Facultad de Ciencias Médicas</option>
+          <option value="Facultad de Ingeniería, Industria y Construcción">Facultad de Ingeniería, Industria y Construcción</option>
+          <option value="Facultad de Educación, Turismo, Arte y Humanidades">Facultad de Educación, Turismo, Arte y Humanidades</option>
+          <option value="Facultad de Ciencias Administrativas, Contables y Comercio">Facultad de Ciencias Administrativas, Contables y Comercio</option>
+      </select><br>
+
+      <label for="tipoActivo">Tipo de Activo:</label>
+      <select id="tipoActivo">
+          <option value="Escritorios">Escritorios</option>
+          <option value="Sillas">Sillas</option>
+          <option value="Mesas">Mesas</option>
+          <option value="Estanterías">Estanterías</option>
+          <option value="Pizarras">Pizarras</option>
+          <option value="Persianas">Persianas</option>
+          <option value="Aspiradoras">Aspiradoras</option>
+          <option value="Extintores">Extintores</option>
+          <option value="Herramientas">Herramientas</option>
+         
+      </select>
+
+      <!-- Detalles del Activo de Mobiliario -->
+      <label for="marcaMobiliario">Marca:</label>
+      <input type="text" id="marcaMobiliario">
+
+      <label for="modeloMobiliario">Modelo:</label>
+      <input type="text" id="modeloMobiliario">
+
+      <label for="materialMobiliario">Material:</label>
+      <input type="text" id="materialMobiliario">
+
+      <label for="valorMobiliario">Valor:</label>
+      <input type="text" id="valorMobiliario">
+
+      <label for="estadoFisico">Estado Físico:</label>
+      <select id="estadoFisico">
+          <option value="bueno">Bueno</option>
+          <option value="regular">Regular</option>
+          <option value="malo">Malo</option>
+      </select>
+
+      <button class="boton" onclick="guardarActivo('mobiliario')">Guardar/Enviar</button>
+
+      <!-- Listado de Activos de Mobiliario -->
+      <ul id="listadoMobiliario"></ul>
+  </div>
+</section>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<script>
+  function guardarActivo(tipo) {
+    var facultad = document.getElementById('facultad').value;
+    var tipoActivo = document.getElementById('tipoActivo').value;
+    var marcaMobiliario = document.getElementById('marcaMobiliario').value;
+    var modeloMobiliario = document.getElementById('modeloMobiliario').value;
+    var materialMobiliario = document.getElementById('materialMobiliario').value;
+    var valorMobiliario = document.getElementById('valorMobiliario').value;
+    var estadoFisico = document.getElementById('estadoFisico').value;
+
+    // Validación de campos obligatorios
+    if (facultad && tipoActivo && marcaMobiliario && modeloMobiliario && materialMobiliario && valorMobiliario && estadoFisico) {
+
+      // Mostrar en el listado
+      var listado = document.getElementById('listadoMobiliario');
+      var nuevoItem = document.createElement('li');
+      nuevoItem.textContent = facultad +" - " +tipoActivo+ " - " + marcaMobiliario + " - "  + modeloMobiliario + " - "  + materialMobiliario + " - "  + valorMobiliario + " - "  + estadoFisico;
+      listado.appendChild(nuevoItem);
+
+      // Limpiar los campos después de agregar
+      document.getElementById('facultad').value = '';
+      document.getElementById('tipoActivo').value = '';
+      document.getElementById('marcaMobiliario').value = '';
+      document.getElementById('modeloMobiliario').value = '';
+      document.getElementById('materialMobiliario').value = '';
+      document.getElementById('valorMobiliario').value = '';
+      document.getElementById('estadoFisico').value = '';
+    } else {
+      alert("Por favor, completa todos los campos.");
+    }
+  }
+</script>
+
+
+
+
+</body>
+</html>
+  

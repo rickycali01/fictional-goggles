@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Mantenimiento</title>
+    <link rel="stylesheet" type="text/css" href="../CODIGOS_CSS/style-mantenimiento.css">
+    <script src="../JAVA_SCRIPT/mantenimiento.js"></script>
+</head>
+
+<body>
+
+    <section class="uno">
+        <img src="../IMAGENES/logouleam....png" alt="logouleam" >
+        <h1 class="titulo">
+            LISTA DE MANTENIMIENTOS PROGRAMADOS
+        </h1>
+    </section>
+    
+    
+<section class="MP">
+    <div id="listaMantenimientos">
+        <h2>Mantenimientos Programados</h2>
+        <table id="tablaMantenimientos">
+            <thead>
+                <tr>
+                    <th>Facultad</th>
+                    <th>Tipo de Activo</th>
+                    <th>Activo</th>
+                    <th>Tipo de Mantenimiento</th>
+                    <th>Fecha Programada</th>
+                    <th>Descripción</th>
+                    <th>Responsable</th>
+                    <th>Realizado</th>    
+                </tr>
+            </thead>
+
+            <tbody> 
+            </tbody>
+
+        </table>
+    </div>
+</section>
+    
+    
+<section class="NuevoMP">
+    <h2>Nuevo Mantenimiento Programado</h2>
+
+    <form action="#" id="formulario">
+
+        <label for="facultad">Facultad:</label>
+        <select id="facultad" name="facultad" required>
+            <option value="Facultad de Ciencias de la Vida y Tecnología">Facultad de Ciencias de la Vida y Tecnología</option>
+            <option value="Facultad de Ciencias Sociales, Derecho y Bienestar">Facultad de Ciencias Sociales, Derecho y Bienestar</option>
+            <option value="Facultad de Ciencias Médicas">Facultad de Ciencias Médicas</option>
+            <option value="Facultad de Ingeniería, Industria y Construcción">Facultad de Ingeniería, Industria y Construcción</option>
+            <option value="Facultad de Educación, Turismo, Arte y Humanidades">Facultad de Educación, Turismo, Arte y Humanidades</option>
+            <option value="Facultad de Ciencias Administrativas, Contables y Comercio">Facultad de Ciencias Administrativas, Contables y Comercio</option>
+        </select><br>
+
+        <label for="tipoActivo">Tipo de Activo:</label>
+        <select id="tipoActivo" name="tipoActivo" required>
+            <option value="Tecnológico">Tecnológico</option>
+            <option value="Inmueble">Mobiliario</option>
+            <option value="Transporte">Transporte</option>
+        </select><br>
+
+
+        <label for="activo">Activo:</label>
+        <input type="text" id="activo" name="activo" required><br>
+
+        <label for="tipo">Tipo de Mantenimiento:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="preventivo">Preventivo</option>
+            <option value="correctivo">Correctivo</option>
+        </select><br>
+
+        <label for="fecha">Fecha Programada:</label>
+        <input type="date" id="fecha" name="fecha" required><br>
+
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br>
+
+        <label for="responsable">Responsable:</label>
+        <input type="text" id="responsable" name="responsable" required><br>
+
+        <input type="submit" value="Agregar Mantenimiento">
+    </form>
+
+</section>
+
+</body>
+</html>

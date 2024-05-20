@@ -1,0 +1,180 @@
+/* BARA DE MENU ALGO DIFERENTE A LA ORIGINAL --------------------------------------------------------------------*/
+
+.navbar {
+    background-color: #8f0483;
+    overflow: hidden;
+    display: flex; 
+    align-items: center; 
+    height: 80px;
+    width: auto;
+    padding: 0 20px; 
+    border-radius: 20px; 
+  }
+ 
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-list li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    padding: 10px;  
+  } 
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    margin-right: auto;  
+  }
+  
+  .search-box input {
+    padding: 8px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    margin-right: 5px;
+    width: 200px; 
+  }
+  
+  .search-btn {
+    padding: 8px 15px;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer; 
+  }
+  
+  .search-btn:hover {
+    background-color: #333333; 
+  }
+  
+  
+  /* Para el activos fijos del menu */
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+
+  
+
+
+/* ETC ----------------------------------------------------------------------------------------------*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body {
+  background-image: url('../IMAGENES/fondoPerfil.jpg');
+  background-size: cover; /* Para asegurarse de que la imagen cubra toda la ventana */
+  background-repeat: no-repeat; 
+  opacity: 0.9; /* Valor entre 0 (transparente) y 1 (completamente opaco) */
+}
+
+.perfil {
+
+  background: inherit;
+    color: #136349;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex; 
+    align-items: center; /* Alineación vertical */
+    justify-content: center; /* Alineación horizontal */
+}
+
+.perfil img {
+    max-width: 300px; 
+    max-height: 150px; 
+    margin-right: 10px; 
+}
+
+.perfil h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.profile-info, .profile-actions {
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Sombra suave */
+    border: 2px solid #ffffff; /* Color del borde igual al fondo */
+    border-bottom-color:#8f0483; /* Color del borde inferior */
+    text-align: left;
+}
+
+.profile-info h2, .profile-actions h2 {
+    border-bottom: 2px solid #511313;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.profile-actions button {
+    background-color: #577391;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-actions button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color:  #838383;
+    color: #fff;
+    width: 100%;
+}

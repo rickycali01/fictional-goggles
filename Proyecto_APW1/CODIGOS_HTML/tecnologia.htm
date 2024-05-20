@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activos Fijos Tecnológicos</title>
+    <link rel="stylesheet" href="../CODIGOS_CSS/ESTILOS.css">
+    <link rel="stylesheet" href="../CODIGOS_CSS/BARRA-MENU.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-list">
+
+        <li class="right"><a href="main.html">Inicio</a></li>
+        <li class="right"><a href="profile.html">Mi perfil</a></li> 
+        <li class="right"><a href="mantenimientos.html">Gestión</a></li>
+        <li class="right"><a href="inventory.html">Inventario</a></li>
+
+        <li class="right dropdown">
+          <a href="#">Activos Fijos</a>
+          <div class="dropdown-content">
+              <a href="tecnología.html">Tecnológicos</a>
+              <a href="mobiliario.html">Mobiliario</a>
+              <a href="transporte.html">Transporte</a>
+          </div>
+        </li>
+
+        <li class="search-box">
+            <input type="text" placeholder="Buscar facultades...">
+            <li> <button class="search-btn">Buscar</button> </li> 
+        </li>
+
+     </ul>
+  </nav>
+
+<section>
+  <div class="container">
+
+    <h1>ACTIVOS FIJOS TECNOLÓGICOS</h1>
+
+      <!-- Filtros -->
+      <label for="facultad">Facultad:</label>
+      <select id="facultad">
+          <option value="Facultad de Ciencias de la Vida y Tecnología">Facultad de Ciencias de la Vida y Tecnología</option>
+          <option value="Facultad de Ciencias Sociales, Derecho y Bienestar">Facultad de Ciencias Sociales, Derecho y Bienestar</option>
+          <option value="Facultad de Ciencias Médicas">Facultad de Ciencias Médicas</option>
+          <option value="Facultad de Ingeniería, Industria y Construcción">Facultad de Ingeniería, Industria y Construcción</option>
+          <option value="Facultad de Educación, Turismo, Arte y Humanidades">Facultad de Educación, Turismo, Arte y Humanidades</option>
+          <option value="Facultad de Ciencias Administrativas, Contables y Comercio">Facultad de Ciencias Administrativas, Contables y Comercio</option>
+      </select><br>
+
+      <label for="tipoActivo">Tipo de Activo:</label>
+      <select id="tipoActivo">
+          <option value="PC de escritorio">PC de escritorio</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Impresora">Impresora</option>
+          <option value="Proyector">Proyector</option>
+          <option value="Pizarra Digital">Pizarra Digital</option>
+          <option value="Camara de Seguridad">Cámara de Seguridad</option>
+          <option value="Dispositivo de Almacenamiento Externos">Dispositivo de Almacenamiento Externo</option>
+          <option value="Otro">Otro</option>
+      </select>
+
+      <!-- Detalles del Activo de Transporte -->
+      <label for="marca">Marca:</label>
+      <input type="text" id="marca">
+
+      <label for="modelo">Modelo:</label>
+      <input type="text" id="modelo">
+
+      <label for="numeroSerie">Número de Serie:</label>
+      <input type="text" id="numeroSerie">
+
+      <label for="valorAproximado">Costo de Adquisición:</label>
+      <input type="text" id="valorAproximado">
+
+      <label for="estadoFisico">Estado Físico:</label>
+      <select id="estadoFisico">
+          <option value="bueno">Bueno</option>
+          <option value="regular">Regular</option>
+          <option value="malo">Malo</option>
+      </select>
+
+      <label for="observacion">Observación:</label>
+      <textarea id="observacion" rows="4" cols="50"></textarea>  
+
+
+      <button class="boton" onclick="guardarActivo('tecnología')">Guardar/Enviar</button>
+
+      <!-- Listado de Activos -->
+      <ul id="listadoTecnologicosUl"></ul>
+  </div>
+</section>
+
+
+ <!-------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  
+  <script>
+          //Este Script es un poco diferente a los otros ya que se agrega una funcionalidad interesante,
+  // que mas adelante veremos como funciona cuando ya se implemente base de datos y demas. 
+
+    function guardarActivo(tipo) {
+      var facultad = document.getElementById('facultad').value;
+      var tipoActivo = document.getElementById('tipoActivo').value;
+      var marca = document.getElementById('marca').value;
+      var modelo = document.getElementById('modelo').value;
+      var numeroSerie = document.getElementById('numeroSerie').value;
+      var valorAproximado = document.getElementById('valorAproximado').value;
+      var estadoFisico = document.getElementById('estadoFisico').value;
+      var observacion = document.getElementById('observacion').value;
+  
+      // Validación de campos obligatorios
+      if (facultad && tipoActivo && marca && modelo && numeroSerie && valorAproximado && estadoFisico && observacion) {
+        // Si todos los campos están llenos, procede a guardar
+  
+        // Agregar a la lista
+        var listado = document.getElementById('listadoTecnologicosUl');
+        var nuevoItem = document.createElement('li');
+        nuevoItem.textContent = facultad + " - " + tipoActivo + " - " + marca + " - " + modelo + " - " + numeroSerie + " - " + valorAproximado + " - " + estadoFisico + " - " + observacion;
+        listado.appendChild(nuevoItem);
+  
+        // Agregar a la tabla
+        var tabla = document.getElementById('tablaTecnologicos').getElementsByTagName('tbody')[0];
+        var newRow = tabla.insertRow(tabla.rows.length);
+  
+        var cellFacultad = newRow.insertCell(0);
+        var cellTipoActivo = newRow.insertCell(1);
+        var cellMarca = newRow.insertCell(2);
+        var cellModelo = newRow.insertCell(3);
+        var cellNumeroSerie = newRow.insertCell(4);
+        var cellValorAproximado = newRow.insertCell(5);
+        var cellEstadoFisico = newRow.insertCell(6);
+        var cellObservacion = newRow.insertCell(7);
+        var cellAcciones = newRow.insertCell(8);
+  
+        cellFacultad.innerHTML = facultad;
+        cellTipoActivo.innerHTML = tipoActivo;
+        cellMarca.innerHTML = marca;
+        cellModelo.innerHTML = modelo;
+        cellNumeroSerie.innerHTML = numeroSerie;
+        cellValorAproximado.innerHTML = valorAproximado;
+        cellEstadoFisico.innerHTML = estadoFisico;
+        cellObservacion.innerHTML = observacion;
+        cellAcciones.innerHTML = '<button onclick="editarActivo(this)">Editar</button> <button onclick="eliminarActivo(this)">Eliminar</button>';
+  
+        // Limpiar los campos después de agregar
+        document.getElementById('facultad').value = '';
+        document.getElementById('tipoActivo').value = '';
+        document.getElementById('marca').value = '';
+        document.getElementById('modelo').value = '';
+        document.getElementById('numeroSerie').value = '';
+        document.getElementById('valorAproximado').value = '';
+        document.getElementById('estadoFisico').value = '';
+        document.getElementById('observacion').value = '';
+      } else {
+        alert("Por favor, completa todos los campos.");
+      }
+    }
+  </script>
+  
+
+</body>
+</html>

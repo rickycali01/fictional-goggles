@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario</title>
+    <link rel="stylesheet" href="../CODIGOS_CSS/style-inventory.css">
+    <link rel="stylesheet" href="../CODIGOS_CSS/BARRA-MENU.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-list">
+        <li class="right"><a href="main.html">Inicio</a></li>
+        <li class="right"><a href="profile.html">Mi perfil</a></li> 
+        <li class="right"><a href="mantenimientos.html">Gestión</a></li>
+        <li class="right"><a href="inventory.html">Inventario</a></li>
+        
+        <li class="right dropdown">
+          <a href="#">Activos Fijos</a>
+          <div class="dropdown-content">
+              <a href="tecnología.html">Tecnológicos</a>
+              <a href="mobiliario.html">Mobiliario</a>
+              <a href="transporte.html">Transporte</a>
+          </div>
+        </li>
+        
+        <li class="search-box">
+            <input type="text" placeholder="Buscar facultades...">
+            <li> <button class="search-btn">Buscar</button> </li>  
+        </li>
+    </ul>
+  </nav>
+
+
+   <section>
+      <div class="container">
+          <h1>ACTIVOS FIJOS TECNOLÓGICOS</h1>
+      
+          <!-- Tabla de Activos Fijos Tecnológicos -->
+          <table id="tablaTecnologicos">
+            <thead>
+            <tr>
+              <th>Facultad</th>
+              <th>Tipo de Activo</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Número de Serie</th>
+              <th>Costo de Adquisición</th>
+              <th>Estado Físico</th>
+              <th>Observación</th>
+              <th>Acciones</th>
+            </tr>
+            </thead> 
+
+            <tbody id="listadoTecnologicosTabla">
+            <!-- Aquí se llenarán los activos fijos -->
+            </tbody>
+
+          </table>    
+       </div>
+    </section>
+
+ <!------------------------------------------------------------------------------------------------------>
+      <section>
+        <div class="container">
+      
+          <h1>ACTIVOS FIJOS MOBILIARIOS</h1>
+      
+          <!-- Tabla de Activos Fijos Mobiliarios -->
+          <table id="tablaMobiliarios">
+            <thead>
+            <tr>
+              <th>Facultad</th>
+              <th>Tipo de Activo</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Material</th>
+              <th>Valor</th>
+              <th>Estado Físico</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody id="listadoMobiliarioTabla">
+            <!-- Aquí se llenarán los activos fijos -->
+            </tbody>
+
+          </table>
+        </div>
+      </section>
+
+<!------------------------------------------------------------------------------------------------------>
+
+      <section>
+        <div class="container">
+      
+          <h1>ACTIVOS FIJOS DE TRANSPORTE</h1>
+      
+          <!-- Tabla de Activos Fijos de Transporte -->
+          <table id="tablaTransporte">
+            <thead>
+            <tr>
+              <th>Facultad</th>
+              <th>Tipo de Activo</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Placa</th>
+              <th>Valor Aproximado</th>
+              <th>Valoración</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody id="listadoTransporteTabla">
+            <!-- Aquí se llenarán los activos fijos -->
+            </tbody>
+
+          </table>
+        </div>
+      </section>
+
+<!------------------------------------------------------------------------------------------------------>
+
+<footer>
+  <p>&copy; 2024 ULEAM</p>
+</footer>
+
+
+
+  <script>
+
+    // Este Script sirve para que una vez que hayan datos ingresados en las tablas de inventario, 
+    //se  puedan editar o eliminar mediante un boton que se incluirá en la tabla en (acciones).
+
+    function editarActivo(btn) {
+  var row = btn.parentNode.parentNode;
+  var cells = row.getElementsByTagName('td');
+
+  var facultad = cells[0].innerText;
+  var tipoActivo = cells[1].innerText;
+  var marca = cells[2].innerText;
+  var modelo = cells[3].innerText;
+  var numeroSerie = cells[4].innerText;
+  var valorAproximado = cells[5].innerText;
+  var estadoFisico = cells[6].innerText;
+  var observacion = cells[7].innerText;
+}
+
+function eliminarActivo(btn) {
+  var row = btn.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+  </script>  
+
+
+</body>
+</html>
+    

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - Gestión de Activos Fijos</title>
+    <link rel="stylesheet" type="text/css" href="../CODIGOS_CSS/style-profile.css"> 
+</head>
+
+<body>
+
+    
+    <nav class="navbar">
+        <ul class="nav-list">
+    
+            <li class="right"><a href="main.html"><strong>Inicio</strong></a></li>
+            <li class="right"><a href="profile.html"><strong>Mi perfil</strong></a></li> 
+            <li class="right"><a href="mantenimientos.html"><strong>Gestión</strong></a></li>
+            <li class="right"><a href="inventory.html"><strong>Inventario</strong></a></li>
+    
+            <li class="right dropdown">
+              <a href="#"><strong>Activos Fijos</strong></a>
+              <div class="dropdown-content">
+                  <a href="tecnología.html">Tecnológicos</a>
+                  <a href="mobiliario.html">Mobiliario</a>
+                  <a href="transporte.html">Transporte</a>
+              </div>
+            </li>
+
+            <li class="search-box">
+                <input type="text" placeholder="Buscar facultades...">
+                <li> <button class="search-btn">Buscar</button> </li>      
+            </li>
+        </ul>    
+    </nav>
+
+    <header class="perfil">  
+        <img src="../IMAGENES/logouleam....png" alt="Imagen">
+        <h1>Perfil de Usuario</h1>
+    </header>
+   
+    <section class="profile-info">
+        <h2>Información del Usuario</h2>
+        <p><strong>Nombre:</strong> Richard Macías</p>
+        <p><strong>Correo Electrónico:</strong> ricky_macias2001@outlook.com</p>
+        <p><strong>Departamento:</strong> Departamento de TI</p>
+        <p><strong>Ubicación:</strong> Edificio Principal, Piso 3</p>
+        <p><strong>Número de Empleado:</strong> 1234</p>
+    </section>
+    
+
+    <section class="profile-actions">
+        <h2>Acciones</h2>
+        <button id="changePasswordBtn">Cambiar Contraseña</button>
+        <button id="editProfileBtn">Editar Perfil</button>
+        <button id="logoutBtn">Cerrar Sesión</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 ULEAM</p>
+    </footer>
+
+<script src="../JAVA_SCRIPT/script.js"></script>
+
+</body>
+</html>
